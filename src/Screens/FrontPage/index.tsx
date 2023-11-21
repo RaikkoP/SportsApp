@@ -1,18 +1,19 @@
 import React from 'react';
 import {styles} from './styles';
-import {SafeAreaView, Text, View} from 'react-native';
+import {Text, View} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
+import StepCounter from '../../Components/StepCounter';
 import Row from '../../Components/Row';
 import Col from '../../Components/Col';
 
 function Frontpage(): React.JSX.Element {
   return (
-    <SafeAreaView style={styles.grid_container}>
+    <LinearGradient
+      colors={['#FFBABA', '#FFD874', '#FFBA53', '#FE5E5E']}
+      style={styles.grid_container}>
       <Row>
         <Col numRows={1}>
-          <View>
-            <Text style={styles.text}>Steps: 4200</Text>
-            <Text>Goal: 15000</Text>
-          </View>
+          <StepCounter />
         </Col>
         <Col numRows={2}>
           <View>
@@ -22,7 +23,7 @@ function Frontpage(): React.JSX.Element {
           </View>
         </Col>
       </Row>
-    </SafeAreaView>
+    </LinearGradient>
   );
 }
 

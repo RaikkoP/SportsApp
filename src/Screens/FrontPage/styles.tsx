@@ -6,8 +6,16 @@ export const styles = StyleSheet.create({
     height: '100%',
     alignItems: 'center',
   },
-  container: {
+  container1: {
     padding: 10,
+    width: '90%',
+    backgroundColor: '#fff',
+    height: '60%',
+    margin: 10,
+    borderRadius: 20,
+  },
+  container2: {
+    padding: 30,
     width: '90%',
     backgroundColor: '#fff',
     height: '30%',

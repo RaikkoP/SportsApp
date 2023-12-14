@@ -1,11 +1,17 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {View} from 'react-native';
 import {styles} from './styles';
 import {ProgressChart} from 'react-native-chart-kit';
 
-const CalorieTracker = () => {
+const CalorieTracker = ({dailyCalories, consumedCalories}) => {
+
+    const [dataInfo, setDataInfo] = useState(0);
+
+    useEffect(() => {
+        setDataInfo(consumedCalories / dailyCalories);
+    }, [dailyCalories, consumedCalories, dataInfo]);
     const data = {
-        data: [0.4],
+        data: [dataInfo],
       };
     const chartConfig = {
         color: (opacity = 1) => `rgba(26, 255, 146, ${opacity})`,

@@ -6,14 +6,10 @@
  */
 
 import React from 'react';
-import {Text, View} from 'react-native';
+import Frontpage from './src/Screens/FrontPage';
 
 function App(): JSX.Element {
-  return (
-    <View>
-      <Text>Muusika Pood mis on eepiline</Text>
-    </View>
-  );
+  return <Frontpage />;
 }
 
 export default App;

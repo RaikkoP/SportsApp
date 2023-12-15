@@ -7,6 +7,7 @@ const CalorieForm = ({setConsumedFoods}) => {
   const [name, setName] = useState();
 
   function submitFood() {
+
     setConsumedFoods(prevConsumedFoods => [
       ...prevConsumedFoods,
       {name: name, calories: calories},

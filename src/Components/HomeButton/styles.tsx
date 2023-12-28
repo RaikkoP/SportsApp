@@ -1,14 +1,15 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
     container:{
         alignItems: 'center',
-        backgroundColor: "#FFFFFF",
-        borderRadius: 5,
-        marginBottom: 54
+        backgroundColor: '#FFFFFF',
+        marginBottom: 10,
+        borderRadius: 20,
+        padding: 18,
     },
     image: {
-        width: 18,
-        height: 18
+        width: 24,
+        height: 24,
     },
-})
+});

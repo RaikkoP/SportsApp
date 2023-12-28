@@ -5,10 +5,11 @@ export const styles = StyleSheet.create({
     paddingTop: 10,
     height: '100%',
     alignItems: 'center',
+    justifyContent: 'center',
   },
   container: {
     paddingTop: 10,
     alignItems: 'center',
-    flexDirection: 'column'
+    flexDirection: 'column',
   },
 });

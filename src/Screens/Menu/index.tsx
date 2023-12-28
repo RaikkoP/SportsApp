@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {styles} from './styles';
 import {View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
@@ -6,13 +6,13 @@ import Button from '../../Components/Button';
 
 
 const Menu = ({navigation}): React.JSX.Element => {
-    
+
     const goToTracker = () => {
-        navigation.navigate('Tracker')
-    }
+        navigation.navigate('Tracker');
+    };
     const goToHistory = () => {
-        navigation.navigate('History')
-    }
+        navigation.navigate('History');
+    };
 
   return (
     <LinearGradient
@@ -24,6 +24,6 @@ const Menu = ({navigation}): React.JSX.Element => {
       </View>
     </LinearGradient>
   );
-}
+};
 
 export default Menu;

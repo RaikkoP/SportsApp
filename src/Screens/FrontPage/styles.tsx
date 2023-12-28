@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     width: '90%',
     backgroundColor: '#fff',
     height: '60%',
-    margin: 10,
+    margin: 3,
     borderRadius: 20,
   },
   container2: {
@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
     width: '90%',
     backgroundColor: '#fff',
     height: '30%',
-    margin: 10,
+    margin: 3,
     borderRadius: 20,
   },
   text: {

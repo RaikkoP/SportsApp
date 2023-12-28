@@ -3,18 +3,27 @@ import {View} from 'react-native';
 import { BarChart } from "react-native-chart-kit";
 import {styles} from './styles';
 
-const HistoryGraph = ({consumedCalories}) => {
+const HistoryGraph = ({calorieHistory}) => {
     
-    const [dataInfo, setDataInfo] = useState(0);
-
+    //useState to make dataInfo out of consumedCalories
+    const [dataInfo, setDataInfo] = useState({
+        labels: [],
+        datasets: [
+        {
+            data: [],
+        },
+  ],
+    });
+    
+    //useEffect to use calorieHistory, commented out to prevent errors
     useEffect(() => {
-        const lastWeekCalories = consumedCalories.slice(-7)
+        const lastWeekCalories = calorieHistory.slice(-7)
 
-        const labels =lastWeekCalories.map(entry => entry.date)
+        const labels =lastWeekCalories.map(entry => entry.label)
         const calories = lastWeekCalories.map(entry => entry.calories)
 
         const weekHistory = {
-            labels,
+            labels: labels.map(String),
             datasets: [
                 {
                     data: calories,
@@ -23,20 +32,25 @@ const HistoryGraph = ({consumedCalories}) => {
         };
 
         setDataInfo(weekHistory);
-    }, [consumedCalories]);
+    }, [calorieHistory]);
 
-
-    
     const testData = {
         labels: ["Mon", "Tues", "Wed", "Thu", "Fri", "Sat", "Sun"],
         datasets: [
             {
-                data: [Math.floor(Math.random()*2500),Math.floor(Math.random()*2500),Math.floor(Math.random()*2500),Math.floor(Math.random()*2500),Math.floor(Math.random()*2500),Math.floor(Math.random()*2500),Math.floor(Math.random()*2500)]
+                data: [Math.floor(Math.random()*2500),
+                    Math.floor(Math.random()*2500),
+                    Math.floor(Math.random()*2500),
+                    Math.floor(Math.random()*2500),
+                    Math.floor(Math.random()*2500),
+                    Math.floor(Math.random()*2500),
+                    Math.floor(Math.random()*2500)]
             }
         ]
     }
 
     const chartConfig= {
+        color: (opacity = 1) => `rgba(26, 255, 146, ${opacity})`,
         backgroundGradientFrom: "#fff",
         backgroundGradientFromOpacity: 0,
         backgroundGradientTo: "#fff",
@@ -45,6 +59,7 @@ const HistoryGraph = ({consumedCalories}) => {
         fillShadowGradientFromOpacity: 1,
         fillShadowGradientTo: "#44FF6D",
         fillShadowGradientToOpacity: 1,
+        decimalPlaces: 0,
     }
 
     return(
@@ -55,7 +70,7 @@ const HistoryGraph = ({consumedCalories}) => {
                     chartConfig={chartConfig}
                     width={350}
                     height={220}
-                    yAxisLabel={"Calories"}
+                    yAxisLabel={""}
                     yAxisSuffix={" cal"}
                 />
             </View>

@@ -6,9 +6,11 @@ import CalorieTracker from '../../Components/CalorieTracker';
 import CalorieInfo from '../../Components/CalorieInfo';
 import CalorieForm from '../../Components/CalorieForm';
 import WaterIntake from '../../Components/WaterIntake';
+import HomeButton from '../../Components/HomeButton';
 
 
-function Frontpage(): React.JSX.Element {
+
+const Frontpage = ({navigation}): React.JSX.Element => {
   const [dailyCalories, setDailyCalories] = useState(2300);
   const [consumedCalories, setConsumedCalories] = useState(0);
   const [consumedFoods, setConsumedFoods] = useState([]);
@@ -26,6 +28,7 @@ function Frontpage(): React.JSX.Element {
     <LinearGradient
       colors={['#FFBABA', '#FFD874', '#FFBA53', '#FE5E5E']}
       style={styles.main}>
+      <HomeButton navigation={navigation}/>
       <View style={styles.container1}>
         <CalorieTracker dailyCalories={dailyCalories} consumedCalories={consumedCalories} />
         <CalorieInfo dailyCalories={dailyCalories} consumedCalories={consumedCalories} />
